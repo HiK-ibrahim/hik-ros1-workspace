@@ -1,0 +1,8 @@
+prefix=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/install
+
+Name: turtlebot3_msgs
+Description: Description of turtlebot3_msgs
+Version: 1.0.1
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: std_msgs message_runtime

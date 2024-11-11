@@ -1,0 +1,8 @@
+prefix=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/install
+
+Name: hik_ortam
+Description: Description of hik_ortam
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

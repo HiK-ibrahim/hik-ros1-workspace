@@ -1,0 +1,8 @@
+prefix=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel
+
+Name: hector_marker_drawing
+Description: Description of hector_marker_drawing
+Version: 0.5.2
+Cflags: -I/home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/hector_slam-noetic-devel/hector_marker_drawing/include -I/usr/include/eigen3
+Libs: -L${prefix}/lib 
+Requires: roscpp visualization_msgs

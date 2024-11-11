@@ -1,0 +1,34 @@
+<launch>
+  <!-- Parametreler -->
+  <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="x_pos" default="6.804982"/>
+  <arg name="y_pos" default="-5.426343"/>
+  <arg name="z_pos" default="-0.001007"/>
+  <arg name="roll" default="-0.000002"/>
+  <arg name="pitch" default="0.003177"/>
+  <arg name="yaw" default="2.330442"/>
+
+  <!-- Gazebo'yu başlat -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find hik_ortam)/worlds/hikQrVeTakipSON.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!-- Robotun URDF'sini başlat -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
+
+  <!-- Gazebo ortamında robotu spawn et -->
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model turtlebot3_$(arg model) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw) -param robot_description" />
+
+  <!-- SLAM'ı başlat -->
+  <include file="$(find turtlebot3_slam)/launch/turtlebot3_slam.launch">
+    <!-- Burada SLAM için gerekli parametreleri varsa ekleyebilirsiniz -->
+  </include>
+ <!-- Python kodunu çalıştırmak için node ekliyoruz -->
+  <node name="cizgi_takip_terminaş" pkg="cizgi_ile_mapping" type="cizgiTakipAlgo.py" output="screen" launch-prefix="xterm -e bash -c 'sleep 4; $0 $@'" />
+</launch>
+

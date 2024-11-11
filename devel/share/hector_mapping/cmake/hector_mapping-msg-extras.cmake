@@ -1,0 +1,2 @@
+set(hector_mapping_MESSAGE_FILES "/home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/hector_slam-noetic-devel/hector_mapping/msg/HectorDebugInfo.msg;/home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/hector_slam-noetic-devel/hector_mapping/msg/HectorIterData.msg")
+set(hector_mapping_SERVICE_FILES "/home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/hector_slam-noetic-devel/hector_mapping/srv/ResetMapping.srv")
