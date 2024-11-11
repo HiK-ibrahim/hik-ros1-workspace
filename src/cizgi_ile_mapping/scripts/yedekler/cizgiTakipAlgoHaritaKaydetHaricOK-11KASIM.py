@@ -3,8 +3,6 @@
 import rospy
 import cv2
 import numpy as np
-import subprocess
-import os
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 from geometry_msgs.msg import Twist
@@ -123,14 +121,9 @@ class LineFollower:
                     self.line_following = True
                     self.qr_last_detected_time = current_time
                     rospy.loginfo("Çizgi takip başlatıldı.")
-
                     break
                 elif qr_data == 'MapTarandiQR' and not self.map_scanned:
                     rospy.loginfo("MAP tarama tamamlandı.")
-                    #alttaki 2 satır mapı kayıt ediyor.
-                    map_save_command = "rosrun map_server map_saver -f /home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/slam_ve_navigation/map/gmapping/cizgiVEqrMap"
-                    process = subprocess.Popen(['xterm',  '-e', map_save_command])
-                    
                     self.twist.linear.x = 0.0
                     self.twist.angular.z = 0.0
                     self.cmd_vel_pub.publish(self.twist)

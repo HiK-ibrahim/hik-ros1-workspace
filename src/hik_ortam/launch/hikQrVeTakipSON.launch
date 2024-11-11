@@ -28,7 +28,10 @@
   <include file="$(find turtlebot3_slam)/launch/turtlebot3_slam.launch">
     <!-- Burada SLAM için gerekli parametreleri varsa ekleyebilirsiniz -->
   </include>
- <!-- Python kodunu çalıştırmak için node ekliyoruz -->
+  
+  <!-- Python kodunu çalıştırmak için node ekliyoruz -->
   <node name="cizgi_takip_terminaş" pkg="cizgi_ile_mapping" type="cizgiTakipAlgo.py" output="screen" launch-prefix="xterm -e bash -c 'sleep 4; $0 $@'" />
+  
+
 </launch>
 
