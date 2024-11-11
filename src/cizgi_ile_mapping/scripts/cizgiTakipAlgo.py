@@ -11,6 +11,7 @@ from geometry_msgs.msg import Twist
 import pyzbar.pyzbar as pyzbar
 import time
 import math
+import yaml
 
 class LineFollower:
     def __init__(self):
@@ -35,11 +36,45 @@ class LineFollower:
         self.current_angle = 0  # Başlangıçtaki açı
         self.direction_switched = False  # Yön değişimi kontrolü
 
+        # Harita kontrolü
+        self.map_path = '/home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/slam_ve_navigation/map/gmapping/cizgiVEqrMap/cizgiVeQRMapSONHal.yaml'  # YAML harita dosyanızın yolu
+        self.map_loaded = False
+
+        # Hedef konumlar
+        self.target_positions = [
+            (2.0, 2.0),  # Örnek 1. hedef
+            (5.0, 5.0),  # Örnek 2. hedef
+        ]
+
+    def check_map(self):
+        """Harita dosyasını kontrol et"""
+        if os.path.exists(self.map_path):
+            rospy.loginfo("Harita dosyası mevcut.")
+            self.map_loaded = True
+        else:
+            rospy.loginfo("Harita dosyası mevcut değil, QR kod taraması yapılacak.")
+            self.map_loaded = False
+
+    def go_to_position(self, position):
+        """Belirtilen konuma gitmek için komut yayınla"""
+        target_x, target_y = position
+        # Burada hedefe gitmek için ROS komutları eklenebilir
+        rospy.loginfo(f"Hedefe gidiliyor: {target_x}, {target_y}")
+        # Örneğin, robotu bir hedefe yönlendirebilirsiniz.
+
     def image_callback(self, msg):
         image = self.bridge.imgmsg_to_cv2(msg, "bgr8")
         self.detect_qr_codes(image)
 
+        if self.map_loaded:
+            # Harita yüklendiyse, hedeflere git
+            for position in self.target_positions:
+                self.go_to_position(position)
+                # Hedefe ulaşıldığında, hedefi güncellemek için arada bir bekleme eklenebilir.
+            return
+
         if self.line_following:
+            # Çizgi takip kodları
             hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
             lower_red = np.array([0, 50, 50])
             upper_red = np.array([10, 255, 255])
@@ -127,8 +162,8 @@ class LineFollower:
                     break
                 elif qr_data == 'MapTarandiQR' and not self.map_scanned:
                     rospy.loginfo("MAP tarama tamamlandı.")
-                    #alttaki 2 satır mapı kayıt ediyor.
-                    map_save_command = "rosrun map_server map_saver -f /home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/slam_ve_navigation/map/gmapping/cizgiVEqrMap"
+                    # Alttaki 2 satır mapı kayıt ediyor.
+                    map_save_command = "rosrun map_server map_saver -f /home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/slam_ve_navigation/map/gmapping/cizgiVEqrMap/cizgiVeQRMapSONHal"
                     process = subprocess.Popen(['xterm',  '-e', map_save_command])
                     
                     self.twist.linear.x = 0.0
@@ -141,5 +176,6 @@ class LineFollower:
 if __name__ == '__main__':
     rospy.init_node('line_follower')
     line_follower = LineFollower()
+    line_follower.check_map()  # Harita var mı kontrol et
     rospy.spin()
 

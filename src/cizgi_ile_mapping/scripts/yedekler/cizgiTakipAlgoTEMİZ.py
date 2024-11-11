@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
 import rospy
-import subprocess
 import cv2
-import os
 import numpy as np
+import subprocess
+import os
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 from geometry_msgs.msg import Twist
@@ -110,7 +110,6 @@ class LineFollower:
         cv2.imshow("Kamera", image)
         cv2.waitKey(1)
 
-    
     def detect_qr_codes(self, image):
         decoded_objects = pyzbar.decode(image)
         current_time = time.time()
@@ -120,19 +119,18 @@ class LineFollower:
                 qr_data = obj.data.decode('utf-8')
                 
                 if qr_data == 'HiK-RacLab':
-                     
                     rospy.loginfo(f"QR Kodu Okundu: {qr_data}")
                     self.line_following = True
                     self.qr_last_detected_time = current_time
                     rospy.loginfo("Çizgi takip başlatıldı.")
-                    
-
 
                     break
                 elif qr_data == 'MapTarandiQR' and not self.map_scanned:
                     rospy.loginfo("MAP tarama tamamlandı.")
-
-
+                    #alttaki 2 satır mapı kayıt ediyor.
+                    map_save_command = "rosrun map_server map_saver -f /home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/slam_ve_navigation/map/gmapping/cizgiVEqrMap/cizgiVeQRMapSONHal"
+                    process = subprocess.Popen(['xterm',  '-e', map_save_command])
+                    
                     self.twist.linear.x = 0.0
                     self.twist.angular.z = 0.0
                     self.cmd_vel_pub.publish(self.twist)
@@ -140,8 +138,8 @@ class LineFollower:
                     self.map_scanned = True
                     break
 
-    
 if __name__ == '__main__':
     rospy.init_node('line_follower')
     line_follower = LineFollower()
     rospy.spin()
+
