@@ -1,3 +1,4 @@
+![image](https://github.com/user-attachments/assets/a1f4846b-65eb-44ee-b87a-68e13c48e320)
 
 Başlangıçta QR Arama:
 
