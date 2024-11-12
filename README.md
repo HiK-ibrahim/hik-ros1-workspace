@@ -1,11 +1,12 @@
-1. Proje 
+1. Proje Galeri Satış Danışman Robotu
 
 Bu projede daha önceden haritası çıkarılıp kaydedilmiş bir alanda turtlebot3 robotumuz istenen konumlara kullanıcı arayüzü üzerinden seçerek  otonom olarak gidebiliyor.
 
 ![image](https://github.com/user-attachments/assets/a1f4846b-65eb-44ee-b87a-68e13c48e320)
 
 Nasıl Çalıştırılır:
-Gerekli kurulumları (Ros neotic - Turtlebot3 ) yaptıktan sonra terminale "roslaunch hik_ortam hik_galeri.launch"  yazılması halinde çalışacaktır.
+Gerekli kurulumları (Ros neotic - Turtlebot3 -Pyqt5- python3) yapılır. 
+Terminale "roslaunch hik_ortam hik_galeri.launch"  yazılması halinde çalışacaktır.
 
 
 2. Proje Çizgi izleme ve haritalandırma (qr kod okunarak başlangıç ve bitiş belirlendi)
@@ -28,6 +29,8 @@ Eğer çizgi merkezden sola veya sağa kaymışsa, robotun dönüş hızını bu
 Çizgi Kaybolduğunda Arama:
 Eğer çizgi kaybolursa robot çizgiyi aramak için belirli bir yönde dönmeye başlar (ilk başta saat yönünde) bu dönme hareketi 75 derece ile sınırlandırılır ve 75 derece dönme hareketi yaparken çizgi hala bulunamadıysa ters yönde (75+75) 150 derece dönme dönerek çizgiyi bulmaya çalışır.
 
+Nasıl Çalıştırılır:
+Terminale "roslaunch hik_ortam hikQrVeTakipSON.launch"  yazılması halinde çalışacaktır.
 
 
 
