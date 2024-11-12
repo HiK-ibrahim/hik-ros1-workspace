@@ -23,5 +23,5 @@ Eğer çizgi merkezden sola veya sağa kaymışsa, robotun dönüş hızını bu
 Eğer çizgi kaybolursa robot çizgiyi aramak için belirli bir yönde dönmeye başlar (ilk başta saat yönünde) bu dönme hareketi 75 derece ile sınırlandırılır ve 75 derece dönme hareketi yaparken çizgi hala bulunamadıysa ters yönde (75+75) 150 derece dönme dönerek çizgiyi bulmaya çalışır.
 
 
-
+güncellendi mi?
 
