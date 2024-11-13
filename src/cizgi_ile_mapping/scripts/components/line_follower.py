@@ -52,15 +52,9 @@ class LineFollower:
                     rospy.loginfo("Harita bulundu, farklı bir işlem gerçekleştiriliyor.")
                     rospy.loginfo("Hedefe gitme işlemi başlatılıyor.")
                     
-                    env = os.environ.copy()
-                    env['QT_QPA_PLATFORM'] = 'xcb'  # Qt'ye xcb platformunu kullanmasını zorunlu kılar
-                    env['LD_PRELOAD'] = '/usr/lib/x86_64-linux-gnu/libQt5XcbQpa.so'  # xcb için gerekli kütüphane yolu
 
-
-                    subprocess.Popen(
-    ["gnome-terminal", "--", "bash", "-c", "python3 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/cizgi_ile_mapping/scripts/toplama/hedeflere_git_gui.py; exec bash"],
-    env=env
-)
+                    
+                    subprocess.Popen(["xterm", "-hold", "-e", "python3", "//home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/cizgi_ile_mapping/scripts/components/nav-islemi.py"])
 
 
 
