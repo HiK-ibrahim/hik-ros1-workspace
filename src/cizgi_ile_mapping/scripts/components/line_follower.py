@@ -49,12 +49,11 @@ class LineFollower:
             if not self.goal_started:
                 try:
                 	
-                    rospy.loginfo("Harita bulundu, farklı bir işlem gerçekleştiriliyor.")
-                    rospy.loginfo("Hedefe gitme işlemi başlatılıyor.")
+                    rospy.loginfo("Harita bulundu, Hedefe gitme işlemi başlatılıyor.")
                     
+    
+                    subprocess.Popen(["xterm", "-hold", "-e", "bash", "-c", "sleep 5; python3 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/cizgi_ile_mapping/scripts/components/hedeflere_git.py"])
 
-                    
-                    subprocess.Popen(["xterm", "-hold", "-e", "python3", "//home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/cizgi_ile_mapping/scripts/components/nav-islemi.py"])
 
 
 

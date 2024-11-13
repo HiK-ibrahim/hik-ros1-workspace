@@ -15,7 +15,7 @@ class GoalSetter:
         
         # Hedef koordinatları
         self.goals = [
-            (-1.33, 1.62),  # 1. hedef
+            (4,759601, 1.62),  # 1. hedef
             (1.05, 1.61)    # 2. hedef
         ]
         self.current_goal_index = 0
