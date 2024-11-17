@@ -33,7 +33,7 @@ class ObstacleAvoidance:
             rospy.logwarn("Lidar verisi boş veya geçersiz!")
             self.front_clear = False
 
-    def move_in_curve_until_clear(self, direction, forward_speed=0.05, turn_speed=1.4):
+    def move_in_curve_until_clear(self, direction, forward_speed=0.05, turn_speed=1.5):
         """
         Robotu önünde engel kalmayana kadar kavisli bir şekilde hareket ettir.
         """
