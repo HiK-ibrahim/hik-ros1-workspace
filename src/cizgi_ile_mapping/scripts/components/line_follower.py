@@ -5,6 +5,7 @@ from cv_bridge import CvBridge
 from geometry_msgs.msg import Twist
 from qr_detection import detect_qr_codes
 from line_detection import follow_line, search_for_line
+from obstacle_avoidance import ObstacleAvoidance  # Engel algılama sınıfını ekledik
 import cv2
 import subprocess
 import time
@@ -23,6 +24,9 @@ class LineFollower:
         self.slam_started = False
         self.map_found = False
         self.goal_started = False  # Hedefe gitme işlemi başlatıldı mı kontrolü
+
+        # Engel algılama sınıfını başlatıyoruz
+        self.obstacle_avoidance = ObstacleAvoidance(cmd_vel_topic="/cmd_vel", scan_topic="/scan")
 
         # Haritanın varlığını kontrol et ve navigasyonu başlat
         map_path = "/home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/slam_ve_navigation/map/gmapping/cizgiVEqrMap/cizgiVeQRMapSONHal.yaml"
@@ -56,6 +60,12 @@ class LineFollower:
             self.prev_time = current_time
             self.frame_count = 0
 
+        # Engel algılama kontrolü
+        if self.obstacle_avoidance.is_avoiding_obstacle():
+            return  # Engel kaçınma modu aktifse diğer algoritmalar devre dışı bırakılır.
+
+        self.obstacle_avoidance.run()  # Engel algılama algoritması çalıştırılır
+
         # Eğer harita mevcutsa QR kodu algılama ve çizgi izleme işlemlerini atla
         if self.map_found:
             # Harita bulunduğunda hedefe gitme işlemi sadece bir kez başlatılmalı
@@ -71,6 +81,7 @@ class LineFollower:
         # Harita yoksa QR kodu algılama ve çizgi izlemeyi başlat
         image = self.bridge.imgmsg_to_cv2(msg, "bgr8")
         detect_qr_codes(self, image)
+
         if self.line_following:
             follow_line(self, image)
         else:
@@ -83,3 +94,4 @@ class LineFollower:
 
         cv2.imshow("Kamera", image)
         cv2.waitKey(1)
+

@@ -8,6 +8,7 @@ from tf.transformations import euler_from_quaternion  # Quaternion -> Euler dön
 import time
 from get_odom import get_current_position,get_current_angle
 from frenet_algo import calculate_frenet_path ,find_closest_waypoint , load_waypoints
+from obstacle_avoidance import ObstacleAvoidance
 
 #Çizgi kaybolduğunda bekleme süresi (saniye cinsinden)
 LINE_LOST_TIMEOUT = 0.5  # 0.5 saniye boyunca çizgiyi bulmaya çalış
@@ -34,6 +35,9 @@ def follow_line(line_follower, image):
     mask = cv2.bitwise_or(mask1, mask2)
 
     # Waypoints'i yükle (otomatik olarak dosya yolunu kontrol eder)
+
+    
+ 
     waypoints = load_waypoints('/home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/cizgi_ile_mapping/scripts/components/waypoints.txt')
 
     # Maskenin üst kısmını göz ardı et
