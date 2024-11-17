@@ -11,39 +11,41 @@ class ObstacleAvoidance:
         self.obstacle_detected = False
         self.avoidance_mode = False
         self.rate = rospy.Rate(10)  # 10 Hz döngü hızı
+        self.front_clear = True
 
     def scan_callback(self, scan):
         """
         Lidar verilerini kontrol et ve engel varsa engel tespitini yap.
         """
         try:
-            sag = min(scan.ranges[-10:])  # Sağ (son 10 derece)
-            sol = min(scan.ranges[0:10])  # Sol (ilk 10 derece)
-            on = min(scan.ranges[350:360] + scan.ranges[0:10])  # Ön (360-0 derece birleştirilmiş)
+            # Ön bölge taraması (360-0 derece birleştirilmiş)
+            on = min(scan.ranges[350:360] + scan.ranges[0:10])
+            distance_threshold = 0.5  # Engel algılama eşiği (metre)
 
-            distance_threshold = 0.7  # Engel algılama eşiği (metre)
+            self.front_clear = on >= distance_threshold
 
-            if on < distance_threshold or sag < distance_threshold or sol < distance_threshold:
-                rospy.loginfo("Engel tespit edildi! Engel algılanıyor.")
+            if not self.front_clear:
+                rospy.loginfo("Ön bölgede engel var!")
                 self.obstacle_detected = True
             else:
                 self.obstacle_detected = False
         except ValueError:
             rospy.logwarn("Lidar verisi boş veya geçersiz!")
-            self.obstacle_detected = False
+            self.front_clear = False
 
-    def move_in_curve(self, direction, duration, forward_speed=0.15, turn_speed=0.4):
+    def move_in_curve_until_clear(self, direction, forward_speed=0.15, turn_speed=0.8):
         """
-        Robotu kavisli bir şekilde hareket ettir.
+        Robotu önünde engel kalmayana kadar kavisli bir şekilde hareket ettir.
         """
         self.twist.linear.x = forward_speed
         self.twist.angular.z = turn_speed if direction == "right" else -turn_speed
 
-        start_time = time.time()
-        while time.time() - start_time < duration and not rospy.is_shutdown():
+        rospy.loginfo(f"{direction.capitalize()} yönünde kavisli dönüş yapılıyor...")
+        while not self.front_clear and not rospy.is_shutdown():
             self.cmd_vel_pub.publish(self.twist)
             self.rate.sleep()
 
+        # Hareketi durdur
         self.twist.linear.x = 0.0
         self.twist.angular.z = 0.0
         self.cmd_vel_pub.publish(self.twist)
@@ -57,12 +59,13 @@ class ObstacleAvoidance:
             rospy.loginfo("Engel tespit edildi, kaçınılıyor...")
 
             # 1. Kavisli dönüş: Sağa dönerek engelden uzaklaş
-            rospy.loginfo("Sağa kavisli dönüş yapılıyor...")
-            self.move_in_curve("right", duration=2)
+            rospy.loginfo("Sola kavisli dönüş yapılıyor...")
+            self.move_in_curve_until_clear("right")
 
             # 2. Düz ilerleme
             rospy.loginfo("Engelden uzaklaşılıyor, düz ilerleniyor...")
-            self.move_forward(duration=4)
+            self.move_forward(duration=5)
+
 
             # 3. Ters kavisli dönüş: Rotaya geri dön
             rospy.loginfo("Sola kavisli dönüş ile rotaya dönülüyor...")
@@ -90,12 +93,26 @@ class ObstacleAvoidance:
         Engel kaçınma işlemi sırasında aktifse True döner, aksi takdirde False.
         """
         return self.avoidance_mode
+
+    def move_in_curve(self, direction, duration, forward_speed=0.15, turn_speed=0.4):
+        """
+        Robotu kavisli bir şekilde hareket ettir.
+        """
+        self.twist.linear.x = forward_speed
+        self.twist.angular.z = turn_speed if direction == "right" else -turn_speed
+
+        start_time = time.time()
+        while time.time() - start_time < duration and not rospy.is_shutdown():
+            self.cmd_vel_pub.publish(self.twist)
+            self.rate.sleep()
+
+        self.twist.linear.x = 0.0
+        self.twist.angular.z = 0.0
+        self.cmd_vel_pub.publish(self.twist)
+
     def run(self):
         """
         Engel varsa kaçınma işlemi yap, yoksa çizgi takibi moduna dön.
         """
         if self.obstacle_detected and not self.avoidance_mode:
             self.avoid_obstacle()
-
-
-            # Burada çizgi takibi ve frenet gibi diğer algoritmalar çalıştırılabilir
