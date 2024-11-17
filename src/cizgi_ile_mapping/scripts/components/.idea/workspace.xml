@@ -14,7 +14,7 @@
   <component name="ChangeListManager">
     <list default="true" id="61d45209-6716-4741-92a7-617933e7acda" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frenet_algo.py" beforeDir="false" afterPath="$PROJECT_DIR$/frenet_algo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obstacle_avoidance.py" beforeDir="false" afterPath="$PROJECT_DIR$/obstacle_avoidance.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../turtlebot3" beforeDir="false" afterPath="$PROJECT_DIR$/../../../turtlebot3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../turtlebot3/turtlebot3_navigation/rviz/turtlebot3_navigation.rviz" beforeDir="false" afterPath="$PROJECT_DIR$/../../../turtlebot3/turtlebot3_navigation/rviz/turtlebot3_navigation.rviz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../turtlebot3/turtlebot3_slam/rviz/turtlebot3_gmapping.rviz" beforeDir="false" afterPath="$PROJECT_DIR$/../../../turtlebot3/turtlebot3_slam/rviz/turtlebot3_gmapping.rviz" afterDir="false" />
@@ -69,7 +69,7 @@
       <updated>1731795619440</updated>
       <workItem from="1731795620477" duration="8236000" />
       <workItem from="1731850764698" duration="7089000" />
-      <workItem from="1731873260180" duration="3487000" />
+      <workItem from="1731873260180" duration="5118000" />
     </task>
     <servers />
   </component>

@@ -20,7 +20,7 @@ class ObstacleAvoidance:
         try:
             # Ön bölge taraması (360-0 derece birleştirilmiş)
             on = min(scan.ranges[350:360] + scan.ranges[0:10])
-            distance_threshold = 0.5  # Engel algılama eşiği (metre)
+            distance_threshold = 0.6  # Engel algılama eşiği (metre)
 
             self.front_clear = on >= distance_threshold
 
@@ -33,7 +33,7 @@ class ObstacleAvoidance:
             rospy.logwarn("Lidar verisi boş veya geçersiz!")
             self.front_clear = False
 
-    def move_in_curve_until_clear(self, direction, forward_speed=0.15, turn_speed=0.8):
+    def move_in_curve_until_clear(self, direction, forward_speed=0.05, turn_speed=1.4):
         """
         Robotu önünde engel kalmayana kadar kavisli bir şekilde hareket ettir.
         """
