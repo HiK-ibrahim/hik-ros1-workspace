@@ -36,5 +36,15 @@ Eğer çizgi kaybolursa robot çizgiyi aramak için belirli bir yönde dönmeye 
 Nasıl Çalıştırılır:
 Terminale "roslaunch hik_ortam hikQrVeTakipSON.launch"  yazılması halinde çalışacaktır.
 
+2.Proje 
+ENGELDEN KAÇ
+![image](https://github.com/user-attachments/assets/34ec162e-ded3-492b-b655-dcce67105abf)
+
+
+FREENET
+![image](https://github.com/user-attachments/assets/dd3ebfc9-656c-422d-accc-f1a129ca1c3e)
+
+
+
 
 
