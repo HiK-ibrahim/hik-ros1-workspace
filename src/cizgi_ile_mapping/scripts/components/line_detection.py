@@ -12,6 +12,7 @@ from obstacle_avoidance import ObstacleAvoidance
 
 #Çizgi kaybolduğunda bekleme süresi (saniye cinsinden)
 LINE_LOST_TIMEOUT = 0.5  # 0.5 saniye boyunca çizgiyi bulmaya çalış
+# /aslında bu frenetin devreye girme süresi olarakda varsayılabilir
 
 def follow_line(line_follower, image):
     """
