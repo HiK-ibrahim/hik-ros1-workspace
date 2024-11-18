@@ -36,13 +36,24 @@ Eğer çizgi kaybolursa robot çizgiyi aramak için belirli bir yönde dönmeye 
 Nasıl Çalıştırılır:
 Terminale "roslaunch hik_ortam hikQrVeTakipSON.launch"  yazılması halinde çalışacaktır.
 
-2.Proje 
-ENGELDEN KAÇ
+3.Proje-Çizgi takibi sırasında çıkan engelden kaçınca ve tekrar çizgiyi bulabilmek için Frenet ile rotaya dönüş 
+
+Çizgi takibi yapar iken engel tespit edilirse (Lidar sensörüile) bu engelden kaçış algoritmasıdır.
 ![image](https://github.com/user-attachments/assets/34ec162e-ded3-492b-b655-dcce67105abf)
 
 
-FREENET
+Frenet Path -
+Bu algoritma daha önceden çizilmiş bir rotanın (x,y) koordinatlarını alır , aracımız bu rotadan uzaklaştığı zaman rotaya tekrar ulaşmasını hedefler.
+Bu algoritma 2. planda çalışır.(Rotadan uzun süre çıkılmış ve rota bulunamıyorsa aktif edilir.)
+Frenet çalışır iken rota mantığı izlenmiştir, verilen koordinatlardan hep ilerdeki koordinata yönlendirecek şekilde ayarlanmıştır. Bu sayede istenmeyen ters yöne gitme durumuna izin vermeyecektir. 
+ 
 ![image](https://github.com/user-attachments/assets/f1745ac4-f7e0-4773-89ad-0fb813d310e7)
+
+Frenet algoritmasına x,y koordinatlarını verebilmek için "/waypoint_saver.py" kodunu terminalde çalıştırıp aracınızın izlediği rotayı kaydedebilirsiniz.
+
+Nasıl Çalıştırılır:
+roslaunch hik_ortam engeldenKacCizgiBul.launch
+
 
 
 

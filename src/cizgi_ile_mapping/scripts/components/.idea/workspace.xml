@@ -13,7 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61d45209-6716-4741-92a7-617933e7acda" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/obstacle_avoidance.py" beforeDir="false" afterPath="$PROJECT_DIR$/obstacle_avoidance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../turtlebot3" beforeDir="false" afterPath="$PROJECT_DIR$/../../../turtlebot3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../turtlebot3/turtlebot3_navigation/rviz/turtlebot3_navigation.rviz" beforeDir="false" afterPath="$PROJECT_DIR$/../../../turtlebot3/turtlebot3_navigation/rviz/turtlebot3_navigation.rviz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../turtlebot3/turtlebot3_slam/rviz/turtlebot3_gmapping.rviz" beforeDir="false" afterPath="$PROJECT_DIR$/../../../turtlebot3/turtlebot3_slam/rviz/turtlebot3_gmapping.rviz" afterDir="false" />
@@ -68,7 +68,7 @@
       <updated>1731795619440</updated>
       <workItem from="1731795620477" duration="8236000" />
       <workItem from="1731850764698" duration="7089000" />
-      <workItem from="1731873260180" duration="5650000" />
+      <workItem from="1731873260180" duration="6254000" />
     </task>
     <servers />
   </component>
