@@ -42,7 +42,8 @@ ENGELDEN KAÇ
 
 
 FREENET
-![image](https://github.com/user-attachments/assets/dd3ebfc9-656c-422d-accc-f1a129ca1c3e)
+![image](https://github.com/user-attachments/assets/f1745ac4-f7e0-4773-89ad-0fb813d310e7)
+
 
 
 
