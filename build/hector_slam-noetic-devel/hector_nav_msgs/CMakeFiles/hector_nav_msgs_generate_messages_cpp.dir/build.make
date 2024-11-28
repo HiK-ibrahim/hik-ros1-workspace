@@ -62,9 +62,9 @@ hector_slam-noetic-devel/hector_nav_msgs/CMakeFiles/hector_nav_msgs_generate_mes
 
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetDistanceToObstacle.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetDistanceToObstacle.h: /home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/hector_slam-noetic-devel/hector_nav_msgs/srv/GetDistanceToObstacle.srv
+/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetDistanceToObstacle.h: /opt/ros/noetic/share/geometry_msgs/msg/PointStamped.msg
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetDistanceToObstacle.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetDistanceToObstacle.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
-/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetDistanceToObstacle.h: /opt/ros/noetic/share/geometry_msgs/msg/PointStamped.msg
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetDistanceToObstacle.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetDistanceToObstacle.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from hector_nav_msgs/GetDistanceToObstacle.srv"
@@ -72,12 +72,12 @@ hector_slam-noetic-devel/hector_nav_msgs/CMakeFiles/hector_nav_msgs_generate_mes
 
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRecoveryInfo.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRecoveryInfo.h: /home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/hector_slam-noetic-devel/hector_nav_msgs/srv/GetRecoveryInfo.srv
-/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRecoveryInfo.h: /opt/ros/noetic/share/nav_msgs/msg/Path.msg
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRecoveryInfo.h: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
-/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRecoveryInfo.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRecoveryInfo.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
-/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRecoveryInfo.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRecoveryInfo.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRecoveryInfo.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRecoveryInfo.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRecoveryInfo.h: /opt/ros/noetic/share/nav_msgs/msg/Path.msg
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRecoveryInfo.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRecoveryInfo.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from hector_nav_msgs/GetRecoveryInfo.srv"
@@ -85,12 +85,12 @@ hector_slam-noetic-devel/hector_nav_msgs/CMakeFiles/hector_nav_msgs_generate_mes
 
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRobotTrajectory.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRobotTrajectory.h: /home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/hector_slam-noetic-devel/hector_nav_msgs/srv/GetRobotTrajectory.srv
-/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRobotTrajectory.h: /opt/ros/noetic/share/nav_msgs/msg/Path.msg
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRobotTrajectory.h: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
-/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRobotTrajectory.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRobotTrajectory.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
-/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRobotTrajectory.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRobotTrajectory.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRobotTrajectory.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRobotTrajectory.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRobotTrajectory.h: /opt/ros/noetic/share/nav_msgs/msg/Path.msg
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRobotTrajectory.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetRobotTrajectory.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from hector_nav_msgs/GetRobotTrajectory.srv"
@@ -99,10 +99,10 @@ hector_slam-noetic-devel/hector_nav_msgs/CMakeFiles/hector_nav_msgs_generate_mes
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetSearchPosition.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetSearchPosition.h: /home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/hector_slam-noetic-devel/hector_nav_msgs/srv/GetSearchPosition.srv
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetSearchPosition.h: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
-/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetSearchPosition.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetSearchPosition.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetSearchPosition.h: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetSearchPosition.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
-/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetSearchPosition.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetSearchPosition.h: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetSearchPosition.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetSearchPosition.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from hector_nav_msgs/GetSearchPosition.srv"
@@ -110,10 +110,10 @@ hector_slam-noetic-devel/hector_nav_msgs/CMakeFiles/hector_nav_msgs_generate_mes
 
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetNormal.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetNormal.h: /home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/hector_slam-noetic-devel/hector_nav_msgs/srv/GetNormal.srv
+/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetNormal.h: /opt/ros/noetic/share/geometry_msgs/msg/PointStamped.msg
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetNormal.h: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetNormal.h: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetNormal.h: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
-/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetNormal.h: /opt/ros/noetic/share/geometry_msgs/msg/PointStamped.msg
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetNormal.h: /opt/ros/noetic/share/gencpp/msg.h.template
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/include/hector_nav_msgs/GetNormal.h: /opt/ros/noetic/share/gencpp/srv.h.template
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating C++ code from hector_nav_msgs/GetNormal.srv"

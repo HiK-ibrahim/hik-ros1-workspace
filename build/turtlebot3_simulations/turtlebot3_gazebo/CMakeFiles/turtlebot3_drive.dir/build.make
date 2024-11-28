@@ -135,12 +135,13 @@ turtlebot3_drive_EXTERNAL_OBJECTS =
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/lib/turtlebot3_gazebo/turtlebot3_drive: /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/lib/turtlebot3_gazebo/turtlebot3_drive: /usr/lib/x86_64-linux-gnu/libprotobuf.so
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/lib/turtlebot3_gazebo/turtlebot3_drive: /usr/lib/x86_64-linux-gnu/libsdformat9.so.9.10.1
-/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/lib/turtlebot3_gazebo/turtlebot3_drive: /usr/lib/x86_64-linux-gnu/libOgreMain.so
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/lib/turtlebot3_gazebo/turtlebot3_drive: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/lib/turtlebot3_gazebo/turtlebot3_drive: /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/lib/turtlebot3_gazebo/turtlebot3_drive: /usr/lib/x86_64-linux-gnu/libOgreTerrain.so
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/lib/turtlebot3_gazebo/turtlebot3_drive: /usr/lib/x86_64-linux-gnu/libOgrePaging.so
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/lib/turtlebot3_gazebo/turtlebot3_drive: /usr/lib/x86_64-linux-gnu/libignition-common3-graphics.so.3.17.0
+/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/lib/turtlebot3_gazebo/turtlebot3_drive: /usr/lib/x86_64-linux-gnu/libOgreTerrain.so
+/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/lib/turtlebot3_gazebo/turtlebot3_drive: /usr/lib/x86_64-linux-gnu/libOgrePaging.so
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/lib/turtlebot3_gazebo/turtlebot3_drive: /usr/lib/x86_64-linux-gnu/libSimTKmath.so.3.6
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/lib/turtlebot3_gazebo/turtlebot3_drive: /usr/lib/x86_64-linux-gnu/libSimTKcommon.so.3.6
 /home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel/lib/turtlebot3_gazebo/turtlebot3_drive: /usr/lib/x86_64-linux-gnu/libblas.so

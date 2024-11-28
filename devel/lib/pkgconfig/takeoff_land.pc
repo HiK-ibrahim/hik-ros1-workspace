@@ -1,0 +1,8 @@
+prefix=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel
+
+Name: takeoff_land
+Description: Description of takeoff_land
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

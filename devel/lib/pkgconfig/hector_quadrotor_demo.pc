@@ -1,0 +1,8 @@
+prefix=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel
+
+Name: hector_quadrotor_demo
+Description: Description of hector_quadrotor_demo
+Version: 0.3.5
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

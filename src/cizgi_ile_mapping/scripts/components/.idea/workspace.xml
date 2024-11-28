@@ -3,6 +3,11 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BackendCodeEditorMiscSettings">
+    <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
+    <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+  </component>
   <component name="CMakeProjectFlavorService">
     <option name="flavorId" value="CMakePlainProjectFlavor" />
   </component>
@@ -13,8 +18,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61d45209-6716-4741-92a7-617933e7acda" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/line_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/line_detection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../turtlebot3" beforeDir="false" afterPath="$PROJECT_DIR$/../../../turtlebot3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../turtlebot3/turtlebot3_navigation/rviz/turtlebot3_navigation.rviz" beforeDir="false" afterPath="$PROJECT_DIR$/../../../turtlebot3/turtlebot3_navigation/rviz/turtlebot3_navigation.rviz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../turtlebot3/turtlebot3_slam/rviz/turtlebot3_gmapping.rviz" beforeDir="false" afterPath="$PROJECT_DIR$/../../../turtlebot3/turtlebot3_slam/rviz/turtlebot3_gmapping.rviz" afterDir="false" />
@@ -70,7 +75,13 @@
       <workItem from="1731795620477" duration="8236000" />
       <workItem from="1731850764698" duration="7089000" />
       <workItem from="1731873260180" duration="6326000" />
-      <workItem from="1731926043667" duration="1360000" />
+      <workItem from="1731926043667" duration="2157000" />
+      <workItem from="1732182888988" duration="331000" />
+      <workItem from="1732183231000" duration="17000" />
+      <workItem from="1732183262138" duration="6000" />
+      <workItem from="1732184028685" duration="36000" />
+      <workItem from="1732184305292" duration="620000" />
+      <workItem from="1732230576406" duration="409000" />
     </task>
     <servers />
   </component>
@@ -87,16 +98,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/waypoint_saver.py</url>
-          <line>2</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
