@@ -1,0 +1,157 @@
+[INFO] [1732985386.010856, 4584.532000]: Camera Info: header: 
+  seq: 70
+  stamp: 
+    secs: 4584
+    nsecs: 523000000
+  frame_id: "front_cam_optical_frame"
+height: 480
+width: 640
+distortion_model: "plumb_bob"
+D: [0.0, 0.0, 0.0, 0.0, 0.0]
+K: [319.9988245765257, 0.0, 320.5, 0.0, 319.9988245765257, 240.5, 0.0, 0.0, 1.0]
+R: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+P: [319.9988245765257, 0.0, 320.5, -0.0, 0.0, 319.9988245765257, 240.5, 0.0, 0.0, 0.0, 1.0, 0.0]
+binning_x: 0
+binning_y: 0
+roi: 
+  x_offset: 0
+  y_offset: 0
+  height: 0
+  width: 0
+  do_rectify: False
+
+
+
+-----------------bu  /home/hik/Masaüstü/ros/görev-1/hik-görev_1/src/hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_description/urdf/quadrotor_hokuyo_utm30lx.urdf.xacro	daki bilgi
+
+    <!-- Hokuyo UTM-30LX mounted upside down below the quadrotor body -->
+    <xacro:include filename="$(find hector_sensors_description)/urdf/hokuyo_utm30lx.urdf.xacro" />
+    <xacro:hokuyo_utm30lx name="laser0" parent="base_link" ros_topic="scan" update_rate="40" ray_count="1081" min_angle="-135" max_angle="135">
+      <origin xyz="0.0 0.0 -0.097" rpy="${M_PI} 0 0"/>
+    </xacro:hokuyo_utm30lx>
+    
+    <!-- Forward facing camera -->
+    <xacro:include filename="$(find hector_sensors_description)/urdf/generic_camera.urdf.xacro" />
+    <xacro:generic_camera name="front_cam" parent="base_link" ros_topic="camera/image" cam_info_topic="camera/camera_info" update_rate="30" res_x="640" res_y="480" image_format="R8G8B8" hfov="90">
+      <origin xyz="0.05 -0.0 -0.25" rpy="0 0 0"/>
+    </xacro:generic_camera>
+ 
+    <!-- Downward facing camera -->
+    <xacro:generic_camera name="downward_cam" parent="base_link" ros_topic="downward_camera/image" cam_info_topic="downward_camera/camera_info" update_rate="30" res_x="640" res_y="480" image_format="R8G8B8" hfov="100">
+      <origin xyz="0.0 0.0 -0.2" rpy="0 ${M_PI/2} 0"/>
+    </xacro:generic_camera>    
+</robot>
+
+-----------------------HİK------------------------------------------
+
+
+bu lidarın--------------------
+
+   <link name="${name}_frame">
+        <inertial>
+          <mass value="0.270" />
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <inertia ixx="2.632e-4" ixy="0" ixz="0" iyy="2.632e-4" iyz="0" izz="1.62e-4" />
+        </inertial>
+        <visual>
+          <origin xyz="0 0 0" rpy="0 0 0" />
+          <geometry>
+          <mesh filename="package://hector_sensors_description/meshes/hokuyo_utm30lx/hokuyo_utm_30lx$(optenv TEST_SELF_FILTER).dae"/>
+        </geometry>
+        </visual>
+        <collision>
+          <origin xyz="0 0 -0.0115" rpy="0 0 0" />
+          <geometry>
+          <box size="0.058 0.058 0.087" />
+          <!--<mesh filename="package://hector_sensors_description/meshes/hokuyo_utm30lx/hokuyo_utm_30lx.stl"/>-->
+        </geometry>
+        </collision>
+      </link>
+    </xacro:macro>
+
+    <xacro:macro name="hokuyo_utm30lx" params="name parent *origin ros_topic update_rate ray_count min_angle max_angle">
+      <xacro:hokuyo_utm30lx_model name="${name}" parent="${parent}">
+        <xacro:insert_block name="origin" />
+      </xacro:hokuyo_utm30lx_model>
+
+------bu ise generic kamaranın 
+
+
+
+  <xacro:macro name="generic_camera" params="name parent *origin ros_topic cam_info_topic update_rate res_x res_y image_format hfov">
+    <joint name="${name}_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}"/>
+      <child link="${name}_link"/>
+    </joint>
+    
+    <link name="${name}_link">
+<!--      <inertial>
+        <mass value="0.001" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.01 0.01 0.01" />
+        </geometry>
+        <material name="Blue">
+          <color rgba="0.0 0.0 0.8 1"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.01 0.01 0.01" />
+        </geometry>
+      </collision>-->
+    </link>
+    
+    <joint name="${name}_optical_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="${-M_PI/2} 0.0 ${-M_PI/2}" />
+      <parent link="${name}_link" />
+      <child link="${name}_optical_frame"/>
+    </joint>
+  
+    <link name="${name}_optical_frame"/>
+
+--------------------------------------------HİK----------------------
+
+
+------------ÖZET BİLGİ -----------
+LIDAR:
+Pozisyon (xyz):
+x = 0.0, y = 0.0, z = -0.097
+Dönüş (rpy):
+roll = π (3.14), pitch = 0, yaw = 0
+Ön Kamera:
+Pozisyon (xyz):
+x = 0.05, y = 0.0, z = -0.25
+Dönüş (rpy):
+roll = 0, pitch = 0, yaw = 0
+
+
+----------------------------------------------------------
+rosrun tf tf_echo laser0_frame front_cam_link
+At time 0.000
+- Translation: [0.050, 0.000, 0.153]
+- Rotation: in Quaternion [1.000, 0.000, -0.000, -0.000]
+            in RPY (radian) [-3.142, 0.000, 0.000]
+            in RPY (degree) [-180.000, 0.000, 0.000]
+---------------------------------------------------------------
+
+Kamera ve LiDAR'dan gelen verileri almak.
+Kamera ve LiDAR arasındaki dönüşüm matrislerini hesaplamak.
+LiDAR verilerini kameranın görüntüsüne eklemek (füzyon).
+LiDAR ve kamera verilerini ROS üzerinden yayınlamak.
+
+-----------------------------------------------------------
+hik@hik-GP73-Leopard-8RD:~$ rostopic echo /front_cam/camera/image | grep frame_id
+  frame_id: "front_cam_optical_frame"
+  frame_id: "front_cam_optical_frame"
+  frame_id: "front_cam_optical_frame"
+^C
+hik@hik-GP73-Leopard-8RD:~$ rostopic echo /scan | grep frame_id
+  frame_id: "laser0_frame"
+  frame_id: "laser0_frame"
