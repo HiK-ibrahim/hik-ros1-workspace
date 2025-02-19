@@ -60,7 +60,5 @@ Bu komut, robotun izlediği rotayı kaydeder.
 roslaunch hik_ortam engeldenKacCizgiBul.launch
 ```
 
----
-Bu düzenleme ile proje metni daha okunaklı, anlaşılır ve profesyonel hale geldi. Her bölüm bağımsız olarak anlatıldı ve resimlerle desteklendi. Geri bildirimlerini bekliyorum! 🚀
 
 
