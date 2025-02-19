@@ -65,5 +65,3 @@ Bu komut, robotun izlediği rotayı kaydeder.
 roslaunch hik_ortam engeldenKacCizgiBul.launch
 ```
 
-
-
