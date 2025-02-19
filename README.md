@@ -4,7 +4,12 @@ Bu projede, daha önceden haritası çıkarılıp kaydedilmiş bir alanda Turtle
 
 ![image](https://github.com/user-attachments/assets/a1f4846b-65eb-44ee-b87a-68e13c48e320)
 
+<<<<<<< Updated upstream
 ---
+=======
+Nasıl Çalıştırılır:
+Gerekli kurulumları (Ros neotic - Turtlebot3 ) yaptıktan sonra terminale "roslaunch hik_ortam hik_galeri.launch"  yazılması halinde çalışacaktır.
+>>>>>>> Stashed changes
 
 # Proje: Çizgi Takibi ve Haritalandırma (QR Kod ile Başlangıç ve Bitiş Belirleme)
 
