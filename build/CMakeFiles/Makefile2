@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build
 
 # The main recursive "all" target.
 all: gtest/all
+all: DroneMissions/all
 all: hector_quadrotor_noetic/geographic_info/geographic_info/all
 all: hector_quadrotor_noetic/hector_models/hector_components_description/all
 all: hector_quadrotor_noetic/hector_gazebo/hector_gazebo/all
@@ -82,6 +83,7 @@ all: hik_ortam/all
 all: hector_quadrotor_noetic/takeoff_land/all
 all: hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_controller/all
 all: hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_teleop/all
+all: my_robot/all
 all: hector_quadrotor_noetic/hector_gazebo/hector_gazebo_plugins/all
 all: hector_quadrotor_noetic/hector_localization/hector_pose_estimation_core/all
 all: hector_quadrotor_noetic/hector_localization/hector_pose_estimation/all
@@ -105,6 +107,7 @@ all: turtlebot3/turtlebot3_description/all
 
 # The main recursive "preinstall" target.
 preinstall: gtest/preinstall
+preinstall: DroneMissions/preinstall
 preinstall: hector_quadrotor_noetic/geographic_info/geographic_info/preinstall
 preinstall: hector_quadrotor_noetic/hector_models/hector_components_description/preinstall
 preinstall: hector_quadrotor_noetic/hector_gazebo/hector_gazebo/preinstall
@@ -133,6 +136,7 @@ preinstall: hik_ortam/preinstall
 preinstall: hector_quadrotor_noetic/takeoff_land/preinstall
 preinstall: hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_controller/preinstall
 preinstall: hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_teleop/preinstall
+preinstall: my_robot/preinstall
 preinstall: hector_quadrotor_noetic/hector_gazebo/hector_gazebo_plugins/preinstall
 preinstall: hector_quadrotor_noetic/hector_localization/hector_pose_estimation_core/preinstall
 preinstall: hector_quadrotor_noetic/hector_localization/hector_pose_estimation/preinstall
@@ -161,6 +165,7 @@ clean: CMakeFiles/clean_test_results.dir/clean
 clean: CMakeFiles/tests.dir/clean
 clean: CMakeFiles/download_extra_data.dir/clean
 clean: gtest/clean
+clean: DroneMissions/clean
 clean: hector_quadrotor_noetic/geographic_info/geographic_info/clean
 clean: hector_quadrotor_noetic/hector_models/hector_components_description/clean
 clean: hector_quadrotor_noetic/hector_gazebo/hector_gazebo/clean
@@ -189,6 +194,7 @@ clean: hik_ortam/clean
 clean: hector_quadrotor_noetic/takeoff_land/clean
 clean: hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_controller/clean
 clean: hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_teleop/clean
+clean: my_robot/clean
 clean: hector_quadrotor_noetic/hector_gazebo/hector_gazebo_plugins/clean
 clean: hector_quadrotor_noetic/hector_localization/hector_pose_estimation_core/clean
 clean: hector_quadrotor_noetic/hector_localization/hector_pose_estimation/clean
@@ -209,6 +215,24 @@ clean: hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_gazebo/clean
 clean: turtlebot3/turtlebot3_description/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory DroneMissions
+
+# Recursive "all" directory target.
+DroneMissions/all:
+
+.PHONY : DroneMissions/all
+
+# Recursive "preinstall" directory target.
+DroneMissions/preinstall:
+
+.PHONY : DroneMissions/preinstall
+
+# Recursive "clean" directory target.
+DroneMissions/clean: DroneMissions/CMakeFiles/_catkin_empty_exported_target.dir/clean
+
+.PHONY : DroneMissions/clean
 
 #=============================================================================
 # Directory level rules for directory cizgi_ile_mapping
@@ -338,7 +362,7 @@ hector_quadrotor_noetic/geographic_info/geographic_info/preinstall:
 .PHONY : hector_quadrotor_noetic/geographic_info/geographic_info/preinstall
 
 # Recursive "clean" directory target.
-hector_quadrotor_noetic/geographic_info/geographic_info/clean: hector_quadrotor_noetic/geographic_info/geographic_info/CMakeFiles/_catkin_empty_exported_target.dir/clean
+hector_quadrotor_noetic/geographic_info/geographic_info/clean:
 
 .PHONY : hector_quadrotor_noetic/geographic_info/geographic_info/clean
 
@@ -1186,6 +1210,33 @@ hik_ortam/clean:
 .PHONY : hik_ortam/clean
 
 #=============================================================================
+# Directory level rules for directory my_robot
+
+# Recursive "all" directory target.
+my_robot/all:
+
+.PHONY : my_robot/all
+
+# Recursive "preinstall" directory target.
+my_robot/preinstall:
+
+.PHONY : my_robot/preinstall
+
+# Recursive "clean" directory target.
+my_robot/clean: my_robot/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/clean
+my_robot/clean: my_robot/CMakeFiles/gazebo_msgs_generate_messages_py.dir/clean
+my_robot/clean: my_robot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/clean
+my_robot/clean: my_robot/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/clean
+my_robot/clean: my_robot/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/clean
+my_robot/clean: my_robot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/clean
+my_robot/clean: my_robot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/clean
+my_robot/clean: my_robot/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/clean
+my_robot/clean: my_robot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/clean
+my_robot/clean: my_robot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/clean
+
+.PHONY : my_robot/clean
+
+#=============================================================================
 # Directory level rules for directory turtlebot3/turtlebot3
 
 # Recursive "all" directory target.
@@ -1401,18 +1452,8 @@ turtlebot3_simulations/turtlebot3_gazebo/preinstall:
 .PHONY : turtlebot3_simulations/turtlebot3_gazebo/preinstall
 
 # Recursive "clean" directory target.
-turtlebot3_simulations/turtlebot3_gazebo/clean: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/clean
-turtlebot3_simulations/turtlebot3_gazebo/clean: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/clean
-turtlebot3_simulations/turtlebot3_gazebo/clean: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/clean
-turtlebot3_simulations/turtlebot3_gazebo/clean: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/clean
-turtlebot3_simulations/turtlebot3_gazebo/clean: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/clean
-turtlebot3_simulations/turtlebot3_gazebo/clean: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/clean
-turtlebot3_simulations/turtlebot3_gazebo/clean: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/clean
-turtlebot3_simulations/turtlebot3_gazebo/clean: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/clean
-turtlebot3_simulations/turtlebot3_gazebo/clean: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/clean
 turtlebot3_simulations/turtlebot3_gazebo/clean: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/clean
-turtlebot3_simulations/turtlebot3_gazebo/clean: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/clean
-turtlebot3_simulations/turtlebot3_gazebo/clean: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/clean
+turtlebot3_simulations/turtlebot3_gazebo/clean: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/clean
 
 .PHONY : turtlebot3_simulations/turtlebot3_gazebo/clean
 
@@ -1682,31 +1723,31 @@ gtest/googletest/CMakeFiles/gtest.dir/clean:
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/clean
 
 #=============================================================================
-# Target rules for target hector_quadrotor_noetic/geographic_info/geographic_info/CMakeFiles/_catkin_empty_exported_target.dir
+# Target rules for target DroneMissions/CMakeFiles/_catkin_empty_exported_target.dir
 
 # All Build rule for target.
-hector_quadrotor_noetic/geographic_info/geographic_info/CMakeFiles/_catkin_empty_exported_target.dir/all:
-	$(MAKE) -f hector_quadrotor_noetic/geographic_info/geographic_info/CMakeFiles/_catkin_empty_exported_target.dir/build.make hector_quadrotor_noetic/geographic_info/geographic_info/CMakeFiles/_catkin_empty_exported_target.dir/depend
-	$(MAKE) -f hector_quadrotor_noetic/geographic_info/geographic_info/CMakeFiles/_catkin_empty_exported_target.dir/build.make hector_quadrotor_noetic/geographic_info/geographic_info/CMakeFiles/_catkin_empty_exported_target.dir/build
+DroneMissions/CMakeFiles/_catkin_empty_exported_target.dir/all:
+	$(MAKE) -f DroneMissions/CMakeFiles/_catkin_empty_exported_target.dir/build.make DroneMissions/CMakeFiles/_catkin_empty_exported_target.dir/depend
+	$(MAKE) -f DroneMissions/CMakeFiles/_catkin_empty_exported_target.dir/build.make DroneMissions/CMakeFiles/_catkin_empty_exported_target.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target _catkin_empty_exported_target"
-.PHONY : hector_quadrotor_noetic/geographic_info/geographic_info/CMakeFiles/_catkin_empty_exported_target.dir/all
+.PHONY : DroneMissions/CMakeFiles/_catkin_empty_exported_target.dir/all
 
 # Build rule for subdir invocation for target.
-hector_quadrotor_noetic/geographic_info/geographic_info/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
+DroneMissions/CMakeFiles/_catkin_empty_exported_target.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 hector_quadrotor_noetic/geographic_info/geographic_info/CMakeFiles/_catkin_empty_exported_target.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 DroneMissions/CMakeFiles/_catkin_empty_exported_target.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-.PHONY : hector_quadrotor_noetic/geographic_info/geographic_info/CMakeFiles/_catkin_empty_exported_target.dir/rule
+.PHONY : DroneMissions/CMakeFiles/_catkin_empty_exported_target.dir/rule
 
 # Convenience name for target.
-_catkin_empty_exported_target: hector_quadrotor_noetic/geographic_info/geographic_info/CMakeFiles/_catkin_empty_exported_target.dir/rule
+_catkin_empty_exported_target: DroneMissions/CMakeFiles/_catkin_empty_exported_target.dir/rule
 
 .PHONY : _catkin_empty_exported_target
 
 # clean rule for target.
-hector_quadrotor_noetic/geographic_info/geographic_info/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	$(MAKE) -f hector_quadrotor_noetic/geographic_info/geographic_info/CMakeFiles/_catkin_empty_exported_target.dir/build.make hector_quadrotor_noetic/geographic_info/geographic_info/CMakeFiles/_catkin_empty_exported_target.dir/clean
-.PHONY : hector_quadrotor_noetic/geographic_info/geographic_info/CMakeFiles/_catkin_empty_exported_target.dir/clean
+DroneMissions/CMakeFiles/_catkin_empty_exported_target.dir/clean:
+	$(MAKE) -f DroneMissions/CMakeFiles/_catkin_empty_exported_target.dir/build.make DroneMissions/CMakeFiles/_catkin_empty_exported_target.dir/clean
+.PHONY : DroneMissions/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 #=============================================================================
 # Target rules for target hector_quadrotor_noetic/hector_quadrotor/hector_uav_msgs/CMakeFiles/hector_uav_msgs_genpy.dir
@@ -5661,6 +5702,276 @@ hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_teleop/CMakeFiles/quad
 .PHONY : hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_teleop/CMakeFiles/quadrotor_teleop.dir/clean
 
 #=============================================================================
+# Target rules for target my_robot/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir
+
+# All Build rule for target.
+my_robot/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f my_robot/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build.make my_robot/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f my_robot/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build.make my_robot/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target gazebo_msgs_generate_messages_cpp"
+.PHONY : my_robot/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+my_robot/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 my_robot/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
+.PHONY : my_robot/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+gazebo_msgs_generate_messages_cpp: my_robot/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : gazebo_msgs_generate_messages_cpp
+
+# clean rule for target.
+my_robot/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f my_robot/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build.make my_robot/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/clean
+.PHONY : my_robot/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/clean
+
+#=============================================================================
+# Target rules for target my_robot/CMakeFiles/gazebo_msgs_generate_messages_py.dir
+
+# All Build rule for target.
+my_robot/CMakeFiles/gazebo_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f my_robot/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build.make my_robot/CMakeFiles/gazebo_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f my_robot/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build.make my_robot/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target gazebo_msgs_generate_messages_py"
+.PHONY : my_robot/CMakeFiles/gazebo_msgs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+my_robot/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 my_robot/CMakeFiles/gazebo_msgs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
+.PHONY : my_robot/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+gazebo_msgs_generate_messages_py: my_robot/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
+
+.PHONY : gazebo_msgs_generate_messages_py
+
+# clean rule for target.
+my_robot/CMakeFiles/gazebo_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f my_robot/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build.make my_robot/CMakeFiles/gazebo_msgs_generate_messages_py.dir/clean
+.PHONY : my_robot/CMakeFiles/gazebo_msgs_generate_messages_py.dir/clean
+
+#=============================================================================
+# Target rules for target my_robot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir
+
+# All Build rule for target.
+my_robot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f my_robot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make my_robot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f my_robot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make my_robot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target trajectory_msgs_generate_messages_eus"
+.PHONY : my_robot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+my_robot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 my_robot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
+.PHONY : my_robot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_eus: my_robot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_eus
+
+# clean rule for target.
+my_robot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f my_robot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make my_robot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/clean
+.PHONY : my_robot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/clean
+
+#=============================================================================
+# Target rules for target my_robot/CMakeFiles/gazebo_msgs_generate_messages_eus.dir
+
+# All Build rule for target.
+my_robot/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f my_robot/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/build.make my_robot/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f my_robot/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/build.make my_robot/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target gazebo_msgs_generate_messages_eus"
+.PHONY : my_robot/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+my_robot/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 my_robot/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
+.PHONY : my_robot/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+gazebo_msgs_generate_messages_eus: my_robot/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule
+
+.PHONY : gazebo_msgs_generate_messages_eus
+
+# clean rule for target.
+my_robot/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f my_robot/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/build.make my_robot/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/clean
+.PHONY : my_robot/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/clean
+
+#=============================================================================
+# Target rules for target my_robot/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir
+
+# All Build rule for target.
+my_robot/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f my_robot/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build.make my_robot/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f my_robot/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build.make my_robot/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target gazebo_msgs_generate_messages_nodejs"
+.PHONY : my_robot/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+my_robot/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 my_robot/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
+.PHONY : my_robot/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+gazebo_msgs_generate_messages_nodejs: my_robot/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : gazebo_msgs_generate_messages_nodejs
+
+# clean rule for target.
+my_robot/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f my_robot/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build.make my_robot/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/clean
+.PHONY : my_robot/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/clean
+
+#=============================================================================
+# Target rules for target my_robot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir
+
+# All Build rule for target.
+my_robot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f my_robot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make my_robot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f my_robot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make my_robot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target trajectory_msgs_generate_messages_cpp"
+.PHONY : my_robot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+my_robot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 my_robot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
+.PHONY : my_robot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_cpp: my_robot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_cpp
+
+# clean rule for target.
+my_robot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f my_robot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make my_robot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/clean
+.PHONY : my_robot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/clean
+
+#=============================================================================
+# Target rules for target my_robot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+my_robot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f my_robot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make my_robot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f my_robot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make my_robot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target trajectory_msgs_generate_messages_lisp"
+.PHONY : my_robot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+my_robot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 my_robot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
+.PHONY : my_robot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_lisp: my_robot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_lisp
+
+# clean rule for target.
+my_robot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f my_robot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make my_robot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/clean
+.PHONY : my_robot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/clean
+
+#=============================================================================
+# Target rules for target my_robot/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+my_robot/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f my_robot/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build.make my_robot/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f my_robot/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build.make my_robot/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target gazebo_msgs_generate_messages_lisp"
+.PHONY : my_robot/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+my_robot/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 my_robot/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
+.PHONY : my_robot/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+gazebo_msgs_generate_messages_lisp: my_robot/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : gazebo_msgs_generate_messages_lisp
+
+# clean rule for target.
+my_robot/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f my_robot/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build.make my_robot/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/clean
+.PHONY : my_robot/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/clean
+
+#=============================================================================
+# Target rules for target my_robot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir
+
+# All Build rule for target.
+my_robot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f my_robot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make my_robot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f my_robot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make my_robot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target trajectory_msgs_generate_messages_nodejs"
+.PHONY : my_robot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+my_robot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 my_robot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
+.PHONY : my_robot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_nodejs: my_robot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_nodejs
+
+# clean rule for target.
+my_robot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f my_robot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make my_robot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/clean
+.PHONY : my_robot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/clean
+
+#=============================================================================
+# Target rules for target my_robot/CMakeFiles/trajectory_msgs_generate_messages_py.dir
+
+# All Build rule for target.
+my_robot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f my_robot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make my_robot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f my_robot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make my_robot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target trajectory_msgs_generate_messages_py"
+.PHONY : my_robot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+my_robot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 my_robot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
+.PHONY : my_robot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+trajectory_msgs_generate_messages_py: my_robot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
+
+.PHONY : trajectory_msgs_generate_messages_py
+
+# clean rule for target.
+my_robot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f my_robot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make my_robot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/clean
+.PHONY : my_robot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/clean
+
+#=============================================================================
 # Target rules for target hector_quadrotor_noetic/hector_gazebo/hector_gazebo_plugins/CMakeFiles/hector_gazebo_ros_magnetic.dir
 
 # All Build rule for target.
@@ -8525,249 +8836,6 @@ turtlebot3_simulations/turtlebot3_fake/CMakeFiles/turtlebot3_fake_node.dir/clean
 .PHONY : turtlebot3_simulations/turtlebot3_fake/CMakeFiles/turtlebot3_fake_node.dir/clean
 
 #=============================================================================
-# Target rules for target turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir
-
-# All Build rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/all:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/depend
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target gazebo_ros_gencfg"
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/all
-
-# Build rule for subdir invocation for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/rule
-
-# Convenience name for target.
-gazebo_ros_gencfg: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/rule
-
-.PHONY : gazebo_ros_gencfg
-
-# clean rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/clean:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/clean
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/clean
-
-#=============================================================================
-# Target rules for target turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir
-
-# All Build rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target gazebo_msgs_generate_messages_cpp"
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-gazebo_msgs_generate_messages_cpp: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : gazebo_msgs_generate_messages_cpp
-
-# clean rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/clean
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/clean
-
-#=============================================================================
-# Target rules for target turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir
-
-# All Build rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/all:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/depend
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target trajectory_msgs_generate_messages_py"
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/all
-
-# Build rule for subdir invocation for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_py: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_py
-
-# clean rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/clean:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/clean
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/clean
-
-#=============================================================================
-# Target rules for target turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir
-
-# All Build rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/all:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/depend
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target gazebo_msgs_generate_messages_py"
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/all
-
-# Build rule for subdir invocation for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-gazebo_msgs_generate_messages_py: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/rule
-
-.PHONY : gazebo_msgs_generate_messages_py
-
-# clean rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/clean:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/clean
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/clean
-
-#=============================================================================
-# Target rules for target turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir
-
-# All Build rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/depend
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target trajectory_msgs_generate_messages_eus"
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_eus: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_eus
-
-# clean rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/clean
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/clean
-
-#=============================================================================
-# Target rules for target turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir
-
-# All Build rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/all:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/depend
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target gazebo_msgs_generate_messages_eus"
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-gazebo_msgs_generate_messages_eus: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/rule
-
-.PHONY : gazebo_msgs_generate_messages_eus
-
-# clean rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/clean
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/clean
-
-#=============================================================================
-# Target rules for target turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir
-
-# All Build rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target gazebo_msgs_generate_messages_nodejs"
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-gazebo_msgs_generate_messages_nodejs: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : gazebo_msgs_generate_messages_nodejs
-
-# clean rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/clean
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/clean
-
-#=============================================================================
-# Target rules for target turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir
-
-# All Build rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target trajectory_msgs_generate_messages_cpp"
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_cpp: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_cpp
-
-# clean rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/clean
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/clean
-
-#=============================================================================
-# Target rules for target turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir
-
-# All Build rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target trajectory_msgs_generate_messages_lisp"
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_lisp: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_lisp
-
-# clean rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/clean
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/clean
-
-#=============================================================================
 # Target rules for target turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir
 
 # All Build rule for target.
@@ -8811,6 +8879,16 @@ turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: he
 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_controller/CMakeFiles/nav_msgs_generate_messages_py.dir/all
 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_controller/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/all
 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_controller/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/all
+turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: my_robot/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/all
+turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: my_robot/CMakeFiles/gazebo_msgs_generate_messages_py.dir/all
+turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: my_robot/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
+turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: my_robot/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/all
+turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: my_robot/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/all
+turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: my_robot/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all
+turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: my_robot/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
+turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: my_robot/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/all
+turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: my_robot/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/all
+turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: my_robot/CMakeFiles/trajectory_msgs_generate_messages_py.dir/all
 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: hector_quadrotor_noetic/hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf2_msgs_generate_messages_eus.dir/all
 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: hector_quadrotor_noetic/hector_gazebo/hector_gazebo_plugins/CMakeFiles/actionlib_generate_messages_cpp.dir/all
 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: hector_quadrotor_noetic/hector_gazebo/hector_gazebo_plugins/CMakeFiles/tf_generate_messages_py.dir/all
@@ -8833,16 +8911,6 @@ turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: he
 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: hector_quadrotor_noetic/hector_gazebo/hector_gazebo_plugins/CMakeFiles/actionlib_generate_messages_py.dir/all
 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: hector_quadrotor_noetic/hector_gazebo/hector_gazebo_plugins/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/all
 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/all
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_cpp.dir/all
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_py.dir/all
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_py.dir/all
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/all
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_eus.dir/all
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_nodejs.dir/all
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/all
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/all
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/all
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/all: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/all
 	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/depend
 	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target turtlebot3_drive"
@@ -8866,58 +8934,31 @@ turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/clean:
 .PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/turtlebot3_drive.dir/clean
 
 #=============================================================================
-# Target rules for target turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir
+# Target rules for target turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir
 
 # All Build rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target gazebo_msgs_generate_messages_lisp"
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/all
+turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/all:
+	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/depend
+	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target gazebo_ros_gencfg"
+.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/all
 
 # Build rule for subdir invocation for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/rule
 
 # Convenience name for target.
-gazebo_msgs_generate_messages_lisp: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/rule
+gazebo_ros_gencfg: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/rule
 
-.PHONY : gazebo_msgs_generate_messages_lisp
-
-# clean rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/clean
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_msgs_generate_messages_lisp.dir/clean
-
-#=============================================================================
-# Target rules for target turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir
-
-# All Build rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles --progress-num= "Built target trajectory_msgs_generate_messages_nodejs"
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hik/Masaüstü/ros/görev-1/hik-görev_1/build/CMakeFiles 0
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_nodejs: turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_nodejs
+.PHONY : gazebo_ros_gencfg
 
 # clean rule for target.
-turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/clean
-.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/clean
+turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/clean:
+	$(MAKE) -f turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/build.make turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/clean
+.PHONY : turtlebot3_simulations/turtlebot3_gazebo/CMakeFiles/gazebo_ros_gencfg.dir/clean
 
 #=============================================================================
 # Target rules for target turtlebot3/turtlebot3_slam/CMakeFiles/flat_world_imu_node.dir

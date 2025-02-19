@@ -146,7 +146,7 @@ Kamera ve LiDAR arasındaki dönüşüm matrislerini hesaplamak.
 LiDAR verilerini kameranın görüntüsüne eklemek (füzyon).
 LiDAR ve kamera verilerini ROS üzerinden yayınlamak.
 
------------------------------------------------------------
+---------------ÖN KAMERA/LİDAR FÜZYO İÇİN--------------------------------------------
 hik@hik-GP73-Leopard-8RD:~$ rostopic echo /front_cam/camera/image | grep frame_id
   frame_id: "front_cam_optical_frame"
   frame_id: "front_cam_optical_frame"
@@ -155,3 +155,28 @@ hik@hik-GP73-Leopard-8RD:~$ rostopic echo /front_cam/camera/image | grep frame_i
 hik@hik-GP73-Leopard-8RD:~$ rostopic echo /scan | grep frame_id
   frame_id: "laser0_frame"
   frame_id: "laser0_frame"
+
+
+rosrun tf tf_echo front_cam_optical_frame  laser0_frame
+At time 0.000
+- Translation: [0.000, -0.153, -0.050]
+- Rotation: in Quaternion [0.500, 0.500, 0.500, -0.500]
+            in RPY (radian) [-1.571, -1.571, 0.000]
+            in RPY (degree) [-90.000, -90.000, 0.000]
+------------------ALT KAMERA / LİDAR FÜZYON İÇİN------------
+
+rostopic echo /downward_cam/downward_camera/image | grep frame_id
+  frame_id: "downward_cam_optical_frame"
+  frame_id: "downward_cam_optical_frame"
+
+rostopic echo /scan/downward | grep frame_id
+  frame_id: "laser1_frame"
+
+rosrun tf tf_echo downward_cam_optical_frame laser1_frame
+At time 0.000
+- Translation: [0.000, -0.000, -0.053]
+- Rotation: in Quaternion [-0.500, -0.500, -0.500, 0.500]
+            in RPY (radian) [-1.571, -1.571, 0.000]
+            in RPY (degree) [-90.000, -90.000, 0.000]
+
+

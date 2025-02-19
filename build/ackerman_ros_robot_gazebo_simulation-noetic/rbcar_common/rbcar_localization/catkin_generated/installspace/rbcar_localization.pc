@@ -1,0 +1,8 @@
+prefix=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/install
+
+Name: rbcar_localization
+Description: Description of rbcar_localization
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel
+
+Name: my_robot
+Description: Description of my_robot
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

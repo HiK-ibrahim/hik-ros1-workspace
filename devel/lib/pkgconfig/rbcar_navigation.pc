@@ -1,0 +1,8 @@
+prefix=/home/hik/Masaüstü/ros/görev-1/hik-görev_1/devel
+
+Name: rbcar_navigation
+Description: Description of rbcar_navigation
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

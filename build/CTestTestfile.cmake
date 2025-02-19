@@ -5,6 +5,7 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
+subdirs("DroneMissions")
 subdirs("hector_quadrotor_noetic/geographic_info/geographic_info")
 subdirs("hector_quadrotor_noetic/hector_models/hector_components_description")
 subdirs("hector_quadrotor_noetic/hector_gazebo/hector_gazebo")
@@ -33,6 +34,7 @@ subdirs("hik_ortam")
 subdirs("hector_quadrotor_noetic/takeoff_land")
 subdirs("hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_controller")
 subdirs("hector_quadrotor_noetic/hector_quadrotor/hector_quadrotor_teleop")
+subdirs("my_robot")
 subdirs("hector_quadrotor_noetic/hector_gazebo/hector_gazebo_plugins")
 subdirs("hector_quadrotor_noetic/hector_localization/hector_pose_estimation_core")
 subdirs("hector_quadrotor_noetic/hector_localization/hector_pose_estimation")
