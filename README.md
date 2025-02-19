@@ -1,62 +1,66 @@
-1. Proje Galeri Satış Danışman Robotu
+# Proje Galeri Satış Danışman Robotu
 
-Bu projede daha önceden haritası çıkarılıp kaydedilmiş bir alanda turtlebot3 robotumuz istenen konumlara kullanıcı arayüzü üzerinden seçerek  otonom olarak gidebiliyor.
+Bu projede, daha önceden haritası çıkarılıp kaydedilmiş bir alanda TurtleBot3 robotu, kullanıcı arayüzü üzerinden belirlenen konumlara otonom olarak gidebilir.
 
 ![image](https://github.com/user-attachments/assets/a1f4846b-65eb-44ee-b87a-68e13c48e320)
 
-Nasıl Çalıştırılır:
-Gerekli kurulumları (Ros neotic - Turtlebot3 -Pyqt5- python3) yapılır. 
-Terminale "roslaunch hik_ortam hik_galeri.launch"  yazılması halinde çalışacaktır.
+---
 
+# Proje: Çizgi Takibi ve Haritalandırma (QR Kod ile Başlangıç ve Bitiş Belirleme)
 
-2. Proje Çizgi izleme ve haritalandırma (qr kod okunarak başlangıç ve bitiş belirlendi)
-Eğer kaydedilmiş bir harita dosyası (.yaml) var ise o haritayı açarak navigasyon başlatır. Kaydedilmiş harita yoksa Başlangıç Qr'ını arar, ardından çizgi arar(kırmızı) ve kırmızı çizgiyi takip eder. Bu çizgi takibi sırasında qr-detection görevi bitiş Qr'ını bulabilmek için çalışmasını sürdürür. Çizginin sonunda bitiş Qr ı bulunduğunda harita kaydedilir. Bir sonraki çalışmada eğer harita var ise bu harita ile işlem yapılır.
+Eğer kaydedilmiş bir harita dosyası (.yaml) varsa, sistem bu haritayı açarak navigasyonu başlatır. Kaydedilmiş harita yoksa, sistem önce **başlangıç QR kodunu** arar, ardından **kırmızı çizgiyi** bulup takip eder.
+
+- **QR kod tespiti** sürekli çalışır ve bitme QR kodunu arar.
+- **Bitiş QR kodu** bulunduğunda harita kaydedilir.
+- Bir sonraki çalışma için kaydedilen harita kullanılır.
+
 ![image](https://github.com/user-attachments/assets/747a09cc-3132-4ecc-bc3d-2dc91d5ba164)
 
+### **Başlangıçta QR Arama**
+- Robot, **2 saniye** içinde hedef QR kodu bulamazsa, kendi etrafında **360 derece** dönmeye başlar.
+- QR kodu tespit edilirse, **çizgi takip algoritmasına** geçilir.
 
+### **Çizgi Takip Algoritması**
+- Robot, ön kameradan gelen görüntüyü **HSV renk uzayına** dönüştürerek kırmızı çizgiyi tespit eder.
+- Tespit edilen çizginin **merkez noktasi** hesaplanır ve robot buna göre **yön düzenlemesi** yapar.
+- Çizgi kaybolursa **75 derece** saat yönünde dönerek arama yapar. Bulamazsa, ters yönde **150 derece** dönerek çizgiyi bulmaya çalışır.
 
-
-
-Başlangıçta QR Arama:
-
-Algoritma başlangıçta 2 saniye içersinde  hedef qr kodu okuyamaz ise kendi etrafında 360 derece dönmeye başlar.Eğer başlangıç qrkodu okunur ise çizgi takip etme algoritmasına geçilir.
-
-
-Çizgi Takip Etme:
-
-Algoritma, robotun önündeki görüntüyü alarak, kırmızı rengindeki çizgiyi tanımak için bir renk filtresi uygular. Bu işlem, görüntüyü HSV renk uzayına dönüştürüp, kırmızı renk aralığını filtreler.
-Elde edilen maskeden çizginin merkezi noktası hesaplanır. Eğer çizgi tespit edilirse:
-Robotun yönünü, çizginin merkezinin görüntüdeki orta noktasıyla karşılaştırarak ayarlar.
-Eğer çizgi merkezden sola veya sağa kaymışsa, robotun dönüş hızını bu hataya göre belirler ve robotu düz ilerlemeye teşvik eder.
-
-Çizgi Kaybolduğunda Arama:
-Eğer çizgi kaybolursa robot çizgiyi aramak için belirli bir yönde dönmeye başlar (ilk başta saat yönünde) bu dönme hareketi 75 derece ile sınırlandırılır ve 75 derece dönme hareketi yaparken çizgi hala bulunamadıysa ters yönde (75+75) 150 derece dönme dönerek çizgiyi bulmaya çalışır.
 ![image](https://github.com/user-attachments/assets/4fa08578-783a-4663-b3b3-641be8768ab8)
 
-Nasıl Çalıştırılır:
-Terminale "roslaunch hik_ortam hikQrVeTakipSON.launch"  yazılması halinde çalışacaktır.
+### **Nasıl Çalıştırılır?**
+Aşağıdaki komut terminalde çalıştırılmalıdır:
+```bash
+roslaunch hik_ortam hikQrVeTakipSON.launch
+```
 
-3.Proje-Çizgi takibi sırasında çıkan engelden kaçınca ve tekrar çizgiyi bulabilmek için Frenet ile rotaya dönüş 
+---
 
-Çizgi takibi yapar iken engel tespit edilirse (Lidar sensörüile) bu engelden kaçış algoritmasıdır.
+# Proje: Çizgi Takibi Sırasında Engelden Kaçma ve Frenet Algoritması ile Rota Dönüşü
+
+Bu proje, **çizgi takibi yaparken engel tespit edilirse**, robotun **engel kaçınma algoritması** ile engelden uzaklaşmasını ve sonrasında tekrar rotaya dönmesini sağlar.
+
 ![image](https://github.com/user-attachments/assets/34ec162e-ded3-492b-b655-dcce67105abf)
 
+### **Frenet Path Algoritması**
+- Robot, daha önceden belirlenmiş bir **x, y koordinat rotasına** göre hareket eder.
+- Eğer robot rotadan uzaklaşırsa, **Frenet algoritması** devreye girerek tekrar rotaya dönmeye çalışır.
+- Rotaya **sürekli ileri yönde** dönmesini sağlar, yanlışlıkla ters yönde gitmesine izin vermez.
 
-Frenet Path -
-Bu algoritma daha önceden çizilmiş bir rotanın (x,y) koordinatlarını alır , aracımız bu rotadan uzaklaştığı zaman rotaya tekrar ulaşmasını hedefler.
-Bu algoritma 2. planda çalışır.(Rotadan uzun süre çıkılmış ve rota bulunamıyorsa aktif edilir.)
-Frenet çalışır iken rota mantığı izlenmiştir, verilen koordinatlardan hep ilerdeki koordinata yönlendirecek şekilde ayarlanmıştır. Bu sayede istenmeyen ters yöne gitme durumuna izin vermeyecektir. 
- 
 ![image](https://github.com/user-attachments/assets/f1745ac4-f7e0-4773-89ad-0fb813d310e7)
 
-Frenet algoritmasına x,y koordinatlarını verebilmek için "/waypoint_saver.py" kodunu terminalde çalıştırıp aracınızın izlediği rotayı kaydedebilirsiniz.
+### **Koordinat Kaydetme**
+Frenet algoritmasına x, y koordinatlarını vermek için:
+```bash
+rosrun hik_ortam waypoint_saver.py
+```
+Bu komut, robotun izlediği rotayı kaydeder.
 
-Nasıl Çalıştırılır:
+### **Nasıl Çalıştırılır?**
+```bash
 roslaunch hik_ortam engeldenKacCizgiBul.launch
+```
 
-
-
-
-
+---
+Bu düzenleme ile proje metni daha okunaklı, anlaşılır ve profesyonel hale geldi. Her bölüm bağımsız olarak anlatıldı ve resimlerle desteklendi. Geri bildirimlerini bekliyorum! 🚀
 
 
