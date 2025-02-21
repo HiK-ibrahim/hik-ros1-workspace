@@ -1,4 +1,4 @@
-# Proje Galeri Satış Danışman Robotu
+# 1.Proje Galeri Satış Danışman Robotu
 
 Bu projede, daha önceden haritası çıkarılıp kaydedilmiş bir alanda TurtleBot3 robotu, kullanıcı arayüzü üzerinden belirlenen konumlara otonom olarak gidebilir.
 
@@ -6,19 +6,18 @@ Bu projede, daha önceden haritası çıkarılıp kaydedilmiş bir alanda Turtle
 
 ---
 
-# Proje: Çizgi Takibi ve Haritalandırma (QR Kod ile Başlangıç ve Bitiş Belirleme)
+# 2.Proje: Çizgi Takibi ve Haritalandırma (QR Kod ile Başlangıç ve Bitiş Belirleme)
 
 Eğer kaydedilmiş bir harita dosyası (.yaml) varsa, sistem bu haritayı açarak navigasyonu başlatır. Kaydedilmiş harita yoksa, sistem önce **başlangıç QR kodunu** arar, ardından **kırmızı çizgiyi** bulup takip eder.
 
-- **QR kod tespiti** sürekli çalışır ve bitme QR kodunu arar.
+- **QR kod tespiti** sürekli çalışır ve bitiş QR kodunu arar.
 - **Bitiş QR kodu** bulunduğunda harita kaydedilir.
 - Bir sonraki çalışma için kaydedilen harita kullanılır.
 
 ![image](https://github.com/user-attachments/assets/747a09cc-3132-4ecc-bc3d-2dc91d5ba164)
 
 ### **Başlangıçta QR Arama**
-- Robot, **2 saniye** içinde hedef QR kodu bulamazsa, kendi etrafında **360 derece** dönmeye başlar.
-- QR kodu tespit edilirse, **çizgi takip algoritmasına** geçilir.
+- Robot, **2 saniye** içinde hedef QR kodu bulamazsa, kendi etrafında **360 derece** dönmeye başlar.Eğer QR kodu tespit edilirse, **çizgi takip algoritmasına** geçilir.
 
 ### **Çizgi Takip Algoritması**
 - Robot, ön kameradan gelen görüntüyü **HSV renk uzayına** dönüştürerek kırmızı çizgiyi tespit eder.
@@ -35,21 +34,21 @@ roslaunch hik_ortam hikQrVeTakipSON.launch
 
 ---
 
-# Proje: Çizgi Takibi Sırasında Engelden Kaçma ve Frenet Algoritması ile Rota Dönüşü
+# 3.Proje: Çizgi Takibi Sırasında Engelden Kaçma ve Frenet Algoritması ile Rotaya Dönüşü
 
-Bu proje, **çizgi takibi yaparken engel tespit edilirse**, robotun **engel kaçınma algoritması** ile engelden uzaklaşmasını ve sonrasında tekrar rotaya dönmesini sağlar.
+Bu proje, **çizgi takibi yaparken engel tespit edilirse(lidar ile)**, robotun **engel kaçınma algoritması** ile engelden uzaklaşmasını ve sonrasında tekrar rotaya dönmesini sağlar.
 
 ![image](https://github.com/user-attachments/assets/34ec162e-ded3-492b-b655-dcce67105abf)
 
 ### **Frenet Path Algoritması**
-- Robot, daha önceden belirlenmiş bir **x, y koordinat rotasına** göre hareket eder.
-- Eğer robot rotadan uzaklaşırsa, **Frenet algoritması** devreye girerek tekrar rotaya dönmeye çalışır.
-- Rotaya **sürekli ileri yönde** dönmesini sağlar, yanlışlıkla ters yönde gitmesine izin vermez.
+- Bu algoritma daha önceden çizilmiş bir rotanın **x,y** koordinatlarını alır , robot bu rotadan uzaklaştığı zaman rotaya tekrar ulaşmasını hedefler.
+- Bu algoritma 2. planda çalışır.(Rotadan belirli bir süre boyunca çıkılmış ve rota bulunamıyorsa **Frenet algoritması** devreye girerek rotaya dönmeye çalışır.)
+- Frenet çalışır iken rota mantığı izlenmiştir, verilen koordinatlardan hep ilerdeki koordinata yönlendirecek şekilde ayarlanmıştır. Bu sayede istenmeyen ters yöne gitme durumuna izin vermeyecektir. .
 
 ![image](https://github.com/user-attachments/assets/f1745ac4-f7e0-4773-89ad-0fb813d310e7)
 
 ### **Koordinat Kaydetme**
-Frenet algoritmasına x, y koordinatlarını vermek için:
+Frenet algoritmasında kullanılacak (x,y)koordinatlarını oluşturabilmek için waypoint_saver.py dosyasını çalıştırmak gerekiyor:
 ```bash
 rosrun hik_ortam waypoint_saver.py
 ```
